@@ -1,0 +1,25 @@
+{
+	"name": "zadaca_1",
+	"version": "1.0.0",
+	"description": "",
+	"main": "aplikacija/server.mjs",
+	"scripts": {
+		"pripremi": "npm link --save express sqlite3 express-session cookie-parser cors",
+		"debug": "nodemon server.mjs rwa_mbaranasi21_conf.csv",
+		"start": "node aplikacija/server.mjs konfiguracija.csv",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Mihael Baranašić",
+	"license": "ISC",
+	"dependencies": {
+		"base32-encoding": "^1.0.0",
+		"cookie-parser": "file:../../../../../../../../usr/lib/node_modules/cookie-parser",
+		"cors": "file:../../../../../../../../usr/lib/node_modules/cors",
+		"express": "file:../../../../../../../../usr/lib/node_modules/express",
+		"express-session": "file:../../../../../../../../usr/lib/node_modules/express-session",
+		"jsonwebtoken": "^9.0.2",
+		"nodemailer": "^6.9.7",
+		"sqlite3": "file:../../../../../../../../usr/lib/node_modules/sqlite3",
+		"totp-generator": "^0.0.14"
+	}
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+  <main>
+    <div id="poruka">{{ poruka }}</div><br>
+    <div class="container">
+      <form (submit)="azurirajKorisnika($event)">
+        <label for="ime">Ime:</label>
+        <input type="text" name="ime" id="ime" [(ngModel)]="korisnik.ime" required>
+  
+        <label for="prezime">Prezime:</label>
+        <input type="text" name="prezime" id="prezime" [(ngModel)]="korisnik.prezime" required>
+  
+        <label for="adresa">Adresa:</label>
+        <input type="text" name="adresa" id="adresa" [(ngModel)]="korisnik.adresa" required>
+  
+        <button type="submit">Promijeni vrijednosti</button>
+      </form>
+      <p id="azurirano">{{ azurirano }}</p>
+    </div>
+    <br>
+  </main>
+  <footer></footer>
+</body>
+  </html>

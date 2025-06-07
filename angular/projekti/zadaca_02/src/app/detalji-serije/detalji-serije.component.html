@@ -1,0 +1,20 @@
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+</head>
+<body>
+  
+
+<div class="container">
+    <p><img [src]="trazeno?.poster_path" width="300" [alt]="trazeno?.name" /></p>
+    <p>Naziv: {{ trazeno?.name }}</p>
+    <p>Opis: {{ trazeno?.overview }}</p>
+    <p>Broj sezona: {{ brojSezona - 1 }}</p>
+    <p>Broj epizoda: 12</p>
+    <p>Popularnost: {{ trazeno?.popularity }}</p>
+    <p><a href="#">Poveznica</a></p>
+    <button (click)="dodajUbazu(trazeno?.id || 1)">Dodaj u favorite</button>
+    <p id="greska">{{ greskaPoruka }}</p>
+  </div>
+</body>
+</html>

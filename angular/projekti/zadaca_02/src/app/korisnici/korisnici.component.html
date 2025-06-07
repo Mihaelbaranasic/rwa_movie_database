@@ -1,0 +1,35 @@
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+</head>
+<body>
+  
+
+<div>
+    <div id="poruka">{{ poruka }}</div><br>
+    <div id="greska">{{ greska }}</div>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Korisničko ime</th>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>E-mail</th>
+        <th>Adresa</th>
+        <th>Tip korisnika</th>
+        <th>Akcija</th>
+      </tr>
+      <tr *ngFor="let korisnik of korisnici">
+        <td>{{ korisnik.id }}</td>
+        <td>{{ korisnik.korime }}</td>
+        <td>{{ korisnik.ime }}</td>
+        <td>{{ korisnik.prezime }}</td>
+        <td>{{ korisnik.email }}</td>
+        <td>{{ korisnik.adresa }}</td>
+        <td>{{ korisnik.tip_Korisnika_id == 2 ? 'Admin' : 'Običan korisnik' }}</td>
+        <td><button (click)="izbrisiKorisnika(korisnik.korime, korisnik.id)">Izbrisi</button></td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

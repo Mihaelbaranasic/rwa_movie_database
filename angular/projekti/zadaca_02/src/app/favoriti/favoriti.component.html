@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <main>
+        <div id="poruka">{{ poruka }}</div><br>
+        <div id="greska">{{ greska }}</div>
+
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Naslov</th>
+                <th>Opis</th>
+                <th>Poster</th>
+            </tr>
+            <tr *ngFor="let favorit of favoriti">
+                <td>{{ favorit.id }}</td>
+                <td>{{ favorit.naziv }}</td>
+                <td>{{ favorit.opis }}</td>
+                <td><img [src]="slika + favorit.slika" width="100" [alt]="'slika_' + favorit.naziv" /></td>
+                <td>
+                    <a [routerLink]="['/detaljiFavorita', favorit.id]">
+                      <button>Detalji</button>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

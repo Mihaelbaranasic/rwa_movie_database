@@ -1,0 +1,27 @@
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+</head>
+<body>
+  
+<div id="poruka">{{ poruka }}</div>
+<form (ngSubmit)="provjeriUnos()" #forma="ngForm">
+    <label for="korime">Korisničko ime</label>
+    <input name="korime" type="text" id="korime" [(ngModel)]="korime" required>
+    
+    <label for="lozinka">Lozinka</label>
+    <input name="lozinka" type="password" id="lozinka" [(ngModel)]="lozinka" required>
+    
+    <button type="submit" id="salji">Šalji</button>
+</form>
+<div class="container">
+  <br><br>
+  <p>Admin</p>
+  <p>Korisničko ime: admin <br>
+  Lozinka: rwa</p>
+  <p>Obični korisnici</p>
+  <p>Za sve se koristi lozinka rwa, a korisnička imena su sljedeća:</p>
+  <p>obican, miha, pero</p>
+</div>
+</body>
+</html>

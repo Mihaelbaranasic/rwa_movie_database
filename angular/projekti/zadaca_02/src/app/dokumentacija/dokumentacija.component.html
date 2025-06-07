@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <main>
+        <div class="autor">
+            <img src="/dokumentacija/autor.jpg" alt="autor">
+            <p>Ime: Mihael</p>
+            <p>Prezime: Baranašić</p>
+            <p>E-mail adresa: <a href = "mailto:mbaranasi21@student.foi.hr">{{mail}}</a></p>
+            <p><a href="/dokumentacija/RWA2023mbaranasi21.png"><img src="/dokumentacija/RWA2023mbaranasi21.png" alt="slika_era_modela"></a></p>
+        </div>
+        
+        <table>
+            <tr>
+                <th>Resurs <br> Parametri</th>
+                <th>GET <br> čitanje</th>
+                <th>POST <br> kreiranje</th>
+                <th>PUT <br> ažuriranje</th>
+                <th>DELETE <br> brisanje</th>
+            </tr>
+            <tr>
+                <td>baza/korisnici</td>
+                <td class="admin">vraća sve korisnike (200) <br> Napravljeno</td>
+                <td class="admin">kreira novog korisnika (201) <br> Napravljeno</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>baza/korisnici <br> /(korime)</td>
+                <td>vraća podatke određenog korisnika (200) <br> Napravljeno</td>
+                <td>“zabranjeno” (405) <br> Napravljeno </td>
+                <td>ažurira određenog korisnika (201) <br> Napravljeno</td>
+                <td class="admin">briše jednog korisnika (201) <br> Napravljeno</td>
+            </tr>
+            <tr>
+                <td>baza/korisnici <br> /(korime)/prijava <br>NE TRAŽI VALIDAN JWT</td>
+                <td>Vraća JWT token u zaglavlju ako postoji sesija (201). Ako ne postoji sesija javlja “zabranjen pristup” (401) <br> Djelomično napravljeno</td>
+                <td>Provjerava podatke prijave, ako su ispravni kreira sesiju. (201) <br> Napravljeno</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>baza/favoriti</td>
+                <td>Vraća sve podatke serija spremljenih u favorite prijavljenog korisnika (200) <br> Vraća sve podatke, ali ne postavlja dobar status pogreške.</td>
+                <td>Dodaje novu seriju u favorite prijavljenog korisnika (201) <br> Napravljeno</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>baza/favoriti/(id)</td>
+                <td>Vraća sve podatke tražene serije u favoritima prijavljenog korisnika (200) <br> Vraća sve podatke, ali ne vraća dobar status pogreške.</td>
+                <td>“zabranjeno” (405) <br> Napravljeno</td>
+                <td>“zabranjeno” (405) <br> Napravljeno</td>
+                <td>Briše seriju iz favorita (201) <br> Napravljeno</td>
+            </tr>
+            <tr>
+                <td>baza/dnevnik <br>?stranica=broj <br>&sortiraj=[d | m] <br>[&datumOd=datum] <br>[&datumDo=datum] <br>[&vrijemeOd=vrijeme] <br>[&vrijemeDo=vrijeme]</td>
+                <td class="admin">vraća podatke loga za neku stranicu (broj), opcionalno filtrirano po vremenskom periodu (moguće sve kombinacije datuma i vremena od ili do), te podatke dobiva sortirano silazno po “datumu i vremenu” (d) ili uzlazno po metodi (m) (200) <br> Nije napravljeno</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th>Uloga</th>
+                <th>Stranica/e</th>
+                <th>opis</th>
+            </tr>
+            <tr>
+                <td>Gost</td>
+                <td>Početna</td>
+                <td>Napravljen prikaz stranica i serija zajedno sa gumbom na detalje serije, ali nije napravljeno straničenje pomoću appStraničenje i nije napravljeno da se u tražilicu mora unjeti barem 3 znaka (radi već sa unosom jednog znaka).</td>
+            </tr>
+            <tr>
+                <td>Gost/Korisnik</td>
+                <td>SerijaDetalji</td>
+                <td>Napravljeno, ali se ne isčitava broj sezona i epizoda nego su ti brojevi fiksni i poveznica ne radi zbog nemogućnosti pronalaska hompage atributa serije.</td>
+            </tr>
+            <tr>
+                <td>Gost</td>
+                <td>Dokumentacija</td>
+                <td>Napravljeno</td>
+            </tr>
+            <tr>
+                <td>Gost</td>
+                <td>Prijava, Odjava</td>
+                <td>Radi i još se kod unosa sa regularnim izrazima provjerava unos.</td>
+            </tr>
+            <tr>
+                <td>Korisnik</td>
+                <td>Profil</td>
+                <td>Prikazani su svi podaci korisnika osim id, lozinka, i tip korisnika. Napravljeno na način da ispod postoji forma u koju korisnik unosi podatke (svi inputi moraju biti popunjeni) za ime, prezime i adresu te ih ažurira pritiskom gumba.</td>
+            </tr>
+            <tr>
+                <td>Korisnik</td>
+                <td>Favoriti</td>
+                <td>Napravljeno, ali bez straničenja</td>
+            </tr>
+            <tr>
+                <td>Korisnik</td>
+                <td>FavoritiDetalji</td>
+                <td>ispravno se prikazuju detalji o seriji, ali nema prikaza detalja o sezonama.</td>
+            </tr>
+            <tr>
+                <td>Admin</td>
+                <td>Registracija</td>
+                <td>Registracija ne radi.</td>
+            </tr>
+            <tr>
+                <td>Admin</td>
+                <td>Dnevnik</td>
+                <td>Nije napravljen dnevnik.</td>
+            </tr>
+        </table>
+        <p>Zadaci</p>
+        <table>
+            <tr>
+                <th>Koraci</th>
+                <th>Opis</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>Na stranicu dokumentacija ažurirati tablice iz prve zadaće oko informacija koji dijelovi su napravljeni za servis odnosno aplikaciju. Ako je nešto napravljeno dijelomično treba to jasno napisati koji dio je napravljen. Ako ovog dijela nema bodovi vezani uz  aplikaciju i/ili web servis nose 0 bodova.</td>
+                <td>Tablice sa prve zadaće su ažurirane.</td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>Na stranicu dokumentacija kreirati tablicu po koracima (počevši od zadaci općenito) ovog dokumenta u kojoj jasno pišu elementi opisa 2 zadaće koji su napravljeni, koji nisu. Ako ovog dijela nema zadaća nosi 0 bodova. Može se napraviti još jedna tablica sa dodatnim opisima ako se želi nešto naglasiti. Nije obavezno.</td>
+                <td>Napravljena je tablica za drugu zadaću.</td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>Složite package.json tako da se sa npm start može pokrenuti server i isto tako jedan package.json, tsconfig.json i angular.json da se može pokrenuti angular projekt.</td>
+                <td>Napravljeno</td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>Kod predavanja zadaće izbrisati svoje ključeve za TMDB servis iz konfiguracijske datoteke svaki student ubacuje svoje ključeve u konfiguracijsku datoteku kod testiranja.</td>
+                <td>Napravljeno</td>
+            </tr>
+            <tr>
+                <td>5.</td>
+                <td>Klientski dio Web Aplikacije HTML, CSS i JS na strani klijenta prebaciti u Angular sa TypeScript-om.</td>
+                <td>Svi klijentski dijelovi Web Aplikacije su prebačeni u Angular.</td>
+            </tr>
+            <tr>
+                <td>6.</td>
+                <td>Pozadinski dio web aplikacije poslužuje kompajliranu verziju Angular aplikacije. Moguće je pokretanje Angular aplikacije preko live servera sa ng serve, ali ta varijanta nosi manje bodova</td>
+                <td>Pozadinski dio web aplikacije poslužuje kompajliranu verziju Angular aplikacije.</td>
+            </tr>
+            <tr>
+                <td>7.</td>
+                <td>Pozadinski dio web aplikacije poslužuje dokumentaciju - moguće je dokumentaciju ugraditi u samu angular aplikaciju</td>
+                <td>Dokumentacija je ugrađena u angular aplikaciju.(u dokumentaciji u folderu server se nalaze samo slike autora i ERA modela i skripta.sql)</td>
+            </tr>
+            <tr>
+                <td>8.</td>
+                <td>Pozadinski dio web aplikacije nudi podršku u obliku REST servisa. REST servis sadrži sve metode kako je to bilo u prvoj zadaći za rad s bazom podataka. Dodatno svi ostali pozadinski dijelovi prve zadaće (npr. komunikacija sa TMDB servisom) koji nemaju direktne veze s bazom se sada tretiraju kao proširenje REST servisa jer klijentski dio aplikacije sada mora slati sve preko fetch zahtjeva. Angular aplikacija nikad ne komunicira direktno sa TMDB servisom već preko pozadinskog dijela kao u prvoj zadaći.</td>
+                <td>Angular komunicira sa TMDB samo preko servera. Server sadrži sve metode kao i u prvoj zadaći, te samo dolazi do problema kod korištenja jwt-a kod dodavanja serije u bazu. (mapa detalji-serije)</td>
+            </tr>
+            <tr>
+                <td>9.</td>
+                <td>Sada svi pozadinski dijelovi osim inicialnog posluživanja Angular aplikacije i prijave traže validan JWT.</td>
+                <td>Kao što je i opisano pozadinski dijelovi traže validan JWT.</td>
+            </tr>
+            <tr>
+                <td>10.</td>
+                <td>Informacije o bazičnoj adresi i portu za pozadinski dio koji koristi Angular aplikacija kod slanja fetch zahtjeva čitaju se iz environment datoteke. Hard kodirana varijanta nosi manje bodova.</td>
+                <td>Sve se čita it environment datoteke.</td>
+            </tr>
+            <tr>
+                <td>11.</td>
+                <td>Potrebno je doraditi dizajn stranice ako u prvoj zadaći niste vodili o tome previše računa. Dizajn treba prebaciti korištenjem Sass preprocesora u Sass ili Scss sintaksi. Čisti CSS ili bootstrap varijante nose 0 bodova.</td>
+                <td>Sav css prebačen je u Scss sintaksu</td>
+            </tr>
+            <tr>
+                <td>12.</td>
+                <td>Dodati reCaptcha v3 sustav na minimalno 3 obrazaca od kojih su obavezni: prijava, registracija i ažuriranje profila.</td>
+                <td>Nije napravljeno</td>
+            </tr>
+            <tr>
+                <td>13.</td>
+                <td>Potrebno je doraditi ažuriranje profila sa opcijom da se uključi dvorazinska autentifikacija. Prilikom prvog uključivanja dvorazinske autentifikacije potrebno je kreirati tajni ključ koji se sprema u bazu i prikazuje korisniku utekstualnom obliku ili u obliku QR koda (za dodatne bodove). Korisnik može isključiti dvorazinsku autentifikaciju ili ponovo uključiti, ali više nema prikaza tajnog ključa.</td>
+                <td>Nije napravljeno</td>
+            </tr>
+            <tr>
+                <td>14.</td>
+                <td>Potrebno je doraditi prijavu da se autentifikacija radi u dvije razine. Prvo korisničko ime i lozinka te nakon toga TOTP ako je uključena dvorazinska autentifikacija za tog korisnika.</td>
+                <td>Nije napravljeno</td>
+            </tr>
+            <tr>
+                <td>15.</td>
+                <td>Potrebno je doraditit prijavu da omogućuje mogućnost prijave sa oAuth putem GitHub računa. Takav korisnik nema TOTP.</td>
+                <td>Nije napravljeno</td>
+            </tr>
+            <tr>
+                <td>16.</td>
+                <td>Korisnik koji se prijavi preki GitHub računa ne radi ništa s bazom podatka. Kod takvog korisnika spremanje favorita se radi u preglednikov local storage. Jednako tako pregled favorita i favoritDetalji se čitaju iz local storage u pregledniku. Stranica profila nije dostupna.</td>
+                <td>Nije napravljeno</td>
+            </tr>
+            <tr>
+                <td>17.</td>
+                <td>Inicijalno mora postojati korisnik iz svake uloge koji nema TOTP i treba navesti podatke na stranici prijava radi lakšeg testiranja.</td>
+                <td>Navedeni su svi korisnici, te nijedan korisnik ne koristi TOTP.</td>
+            </tr>
+            <tr>
+                <td>18.</td>
+                <td class="admin">Za dodatne bodove može se prebaciti cijeli pozadinski dio u TypeScript. Kod pokretanja sa npm start obavezno se mora napraviti recompile TypeScript-a i kopiranje svih bitnih statičnih sadržaja da aplikacija normalno radi.</td>
+                <td>Nije napravljeno</td>
+            </tr>
+        </table>
+    </main>
+    <footer></footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+$primary-color: #26262614;
+$secondary-color: #cccccc9c;
+$nav-background: burlywood;
+$button-background: beige;
+
+.container {
+    width: 50%;
+    margin: auto;
+    line-height: 30px;
+    padding: 10px;
+    border: 2px solid black;
+    margin-bottom: 80px;
+}
+table {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 50px;
+    background-color: $secondary-color;
+    border: 1px solid black;
+  
+    th, td {
+      border: 1px solid black;
+    }
+}
+  button {
+    border-radius: 10%;
+    background-color: $button-background;
+    font-weight: bold;
+    cursor: pointer;
+}
+  .admin {
+    color: blue;
+}
+  
+  .autor {
+    background-color: $secondary-color;
+    padding: 20px;
+    width: 40%;
+    margin: auto;
+    margin-bottom: 50px;
+  
+    img {
+      height: 200px;
+      width: auto;
+    }
+}

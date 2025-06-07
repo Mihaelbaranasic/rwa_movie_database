@@ -1,0 +1,26 @@
+$primary-color: #26262614;
+$secondary-color: #cccccc9c;
+$nav-background: burlywood;
+$button-background: beige;
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: auto;
+    margin-top: 8rem;
+    padding: 20px;
+    border: 2px solid black;
+    margin-bottom: 50px;
+  
+    input {
+      margin-bottom: 20px;
+    }
+  
+    button {
+      border-radius: 10%;
+      background-color: $button-background;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }

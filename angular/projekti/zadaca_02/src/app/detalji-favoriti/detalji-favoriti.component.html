@@ -1,0 +1,19 @@
+<div class="nav">
+    <header>TV Serije</header>
+</div>
+<main>
+    <div class="container">
+        <div id="poruka">{{ poruka }}</div><br>
+        <p *ngIf="favorit">
+            <img [src]="slika + favorit.slika" width="300" [alt]="'slika_' + favorit.naziv" />
+        </p>
+        <p *ngIf="favorit">Naziv: {{ favorit.naziv }}</p>
+        <p *ngIf="favorit">Opis: {{ favorit.opis }}</p>
+        <p *ngIf="favorit">Broj sezona: {{ favorit.brojSezona }}</p>
+        <p *ngIf="favorit">Broj epizoda: {{ favorit.brojEpizoda }}</p>
+        <p *ngIf="favorit">Popularnost: {{ favorit.popularnost }}</p>
+        <p *ngIf="favorit"><a href="#">Poveznica</a></p>
+        <!-- <button (click)="obrisiFavorita()">Obriši favorita</button> -->
+    </div>
+</main>
+<footer></footer>

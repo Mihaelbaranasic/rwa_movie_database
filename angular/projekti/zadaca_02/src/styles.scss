@@ -1,0 +1,24 @@
+
+$primary-color: #26262614;
+$secondary-color: #cccccc9c;
+$nav-background: burlywood;
+$button-background: beige;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background-color: $primary-color;
+  text-align: center;
+}
+
+header {
+  font-size: 18px;
+  font-weight: bold;
+}
+

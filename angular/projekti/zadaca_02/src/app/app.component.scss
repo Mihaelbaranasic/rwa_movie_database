@@ -1,0 +1,15 @@
+$primary-color: #26262614;
+$secondary-color: #cccccc9c;
+$nav-background: burlywood;
+$button-background: beige;
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: $nav-background;
+    height: 3rem;
+    margin-bottom: 50px;
+  }
+  

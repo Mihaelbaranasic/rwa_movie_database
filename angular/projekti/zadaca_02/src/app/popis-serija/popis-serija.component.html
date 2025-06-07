@@ -1,0 +1,38 @@
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+</head>
+<body>
+  
+<p id="poruka">{{ poruka }}</p>
+<input id="filter" type="text" [(ngModel)]="filter" (keyup)="dohvatiSerije()">
+<div id="stranicenje">
+    <button (click)="promijeniStranicu(1)"><<</button>
+    <button (click)="promijeniStranicu(stranica - 1)"><</button>
+    <button>{{ stranica }}/{{ ukupnoStranica }}</button>
+    <button (click)="promijeniStranicu(stranica + 1)">></button>
+    <button (click)="promijeniStranicu(ukupnoStranica)">>></button>
+  </div>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Jezik</th>
+    <th>Naslov</th>
+    <th>Opis</th>
+    <th>Poster</th>
+    <th>Datum</th>
+  </tr>
+  <tr *ngFor="let serija of serije">
+    <td>{{ serija.id }}</td>
+    <td>{{ serija.original_language }}</td>
+    <td>{{ serija.name }}</td>
+    <td>{{ serija.overview }}</td>
+    <td><img [src]="slika + serija.poster_path" width="100" alt="slika_{{ serija.name }}" /></td>
+    <td>{{ formatirajDatum(serija.first_air_date) }}</td>
+    <td><a (click)="prikaziDetaljeSerije(serija.id)"><button>Detalji serije</button></a></td>
+
+  </tr>
+</table>
+</body>
+</html>
+
